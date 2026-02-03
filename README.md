@@ -12,7 +12,7 @@ A cute, funny, mobile-first Valentine date invite built with React, Vite, TypeSc
 
 Edit `src/config.ts` and set `FOR_NAME` to your girlfriend’s name so the “Made with 💖 for [name]” line is personalized.
 
-Change the default date, time, and place in `src/pages/FlowerPage.tsx` (same values are used for Add to Calendar). **Photos**: The flower page shows images from `public/photos/` as `1.png`, `2.png`, ... `9.png`. Replace or add files there to customize the gallery.
+Change the default date, time, and place in `src/pages/FlowerPage.tsx` (same values are used for Add to Calendar). **Photos**: The flower page shows images from `public/photos/` (e.g. `1.png`, `2.png`). **For the deployed site to show photos**, you must commit and push the `public/photos/` folder: run `git add public/photos` then commit and push.
 
 ## Run
 

@@ -8,7 +8,8 @@ const DEFAULT_TIME = "6:00 PM";
 const DEFAULT_PLACE = "Karinderya date = best date.";
 const CALENDAR_TITLE = "Valentine Date";
 
-const PHOTO_COUNT = 9;
+// Only list photo numbers that exist in public/photos/ (e.g. 1.png, 2.png, ...). Must be committed to repo for deployed site.
+const PHOTO_IDS = [1, 2, 4, 5, 6, 8, 9];
 
 export default function FlowerPage() {
   const [bloomStep, setBloomStep] = useState(0);
@@ -196,12 +197,12 @@ export default function FlowerPage() {
         >
           <p className="text-xs text-pink-500 font-medium mb-2 text-left">Us</p>
           <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 scrollbar-thin">
-            {Array.from({ length: PHOTO_COUNT }, (_, i) => i + 1).map((n) => (
+            {PHOTO_IDS.map((n, i) => (
               <motion.div
                 key={n}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 + n * 0.05 }}
+                transition={{ delay: 0.6 + i * 0.05 }}
                 className="flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border-2 border-pink-200 bg-pink-100"
               >
                 <img
@@ -209,6 +210,9 @@ export default function FlowerPage() {
                   alt=""
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
                 />
               </motion.div>
             ))}
