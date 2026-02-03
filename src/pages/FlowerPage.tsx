@@ -2,14 +2,20 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { setFlowStep } from "../lib/storage";
 import { getGoogleCalendarUrl, downloadIcs } from "../lib/calendar";
+import photo1 from "../assets/photos/1.png";
+import photo2 from "../assets/photos/2.png";
+import photo4 from "../assets/photos/4.png";
+import photo5 from "../assets/photos/5.png";
+import photo6 from "../assets/photos/6.png";
+import photo8 from "../assets/photos/8.png";
+import photo9 from "../assets/photos/9.png";
 
 const DEFAULT_DATE = "Feb 14, 2026";
 const DEFAULT_TIME = "6:00 PM";
 const DEFAULT_PLACE = "Karinderya date = best date.";
 const CALENDAR_TITLE = "Valentine Date";
 
-// Only list photo numbers that exist in public/photos/ (e.g. 1.png, 2.png, ...). Must be committed to repo for deployed site.
-const PHOTO_IDS = [1, 2, 4, 5, 6, 8, 9];
+const GALLERY_PHOTOS = [photo1, photo2, photo4, photo5, photo6, photo8, photo9];
 
 export default function FlowerPage() {
   const [bloomStep, setBloomStep] = useState(0);
@@ -197,22 +203,19 @@ export default function FlowerPage() {
         >
           <p className="text-xs text-pink-500 font-medium mb-2 text-left">Us</p>
           <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 scrollbar-thin">
-            {PHOTO_IDS.map((n, i) => (
+            {GALLERY_PHOTOS.map((src, i) => (
               <motion.div
-                key={n}
+                key={src}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 + i * 0.05 }}
                 className="flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border-2 border-pink-200 bg-pink-100"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}photos/${n}.png`}
+                  src={src}
                   alt=""
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
                 />
               </motion.div>
             ))}
