@@ -205,7 +205,7 @@ export default function FlowerPage() {
                 className="flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border-2 border-pink-200 bg-pink-100"
               >
                 <img
-                  src={`/photos/${n}.png`}
+                  src={`${import.meta.env.BASE_URL}photos/${n}.png`}
                   alt=""
                   className="w-full h-full object-cover"
                   loading="lazy"
