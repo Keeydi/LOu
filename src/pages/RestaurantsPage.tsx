@@ -47,7 +47,7 @@ export default function RestaurantsPage() {
     playErrorBuzz();
     setShakeId(r.id);
     setTimeout(() => setShakeId(null), 500);
-    setModal({ title: "Nope", message: r.error });
+    setModal({ title: "Nope", message: "error" in r ? r.error : "Try again." });
   };
 
   return (

@@ -6,7 +6,7 @@ type ToastProps = {
   onDismiss?: () => void;
 };
 
-export function Toast({ message, visible, onDismiss }: ToastProps) {
+export function Toast({ message, visible }: ToastProps) {
   return (
     <AnimatePresence>
       {visible && (

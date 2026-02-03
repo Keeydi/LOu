@@ -32,19 +32,10 @@ npm run preview
 
 ## Deploy to GitHub Pages (github.io)
 
-1. **Create a repo** on GitHub (e.g. `LOu`). If you use a different repo name, edit `vite.config.ts` and set `repoName` to that name.
+Repo: [github.com/Keeydi/LOu](https://github.com/Keeydi/LOu)
 
-2. **Push your code** to the `main` branch:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/LOu.git
-   git push -u origin main
-   ```
+**One-time setup:** In the repo go to **Settings > Pages**. Under **Build and deployment**, set **Source** to **GitHub Actions**. Save.
 
-3. **Turn on GitHub Pages**: In the repo go to **Settings > Pages**. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+After the workflow runs (on every push to `main`), your site is live at:
 
-4. **Deploy**: The workflow runs on every push to `main`. After it finishes, your site is live at:
-   **`https://YOUR_USERNAME.github.io/LOu/`**
+**https://keeydi.github.io/LOu/**
